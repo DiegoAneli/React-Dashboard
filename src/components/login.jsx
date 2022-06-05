@@ -4,6 +4,7 @@ import jwt_decode from "jwt-decode";
 import Home from "./home";
 
 
+
 function Login() {
 
   const [ user, setUser ] = useState({});
@@ -50,22 +51,20 @@ function Login() {
   return (
     <div className="main">
 
-      <div id="signInDiv" align="center"></div>
+      <div id="signInDiv"></div>
       
       { 
         Object.keys(user).length !== 0 && 
-        <button onClick={ (e) => handleSignOut(e)}>Sign Out</button>
-
+        <div> 
+        <button type="button" class="btn btn-primary" onClick={ (e) => handleSignOut(e)}>Disconnetti</button>
+        <Home />
+        </div>
       }
       { user && 
-
+        
         <>
       
-        <div className="container" align="center" >  
-        <img src={user.picture}></img>
-        <h3>Benvenuto {user.name}</h3>
-        <Home/>
-        </div>
+       
           
         </>
       }

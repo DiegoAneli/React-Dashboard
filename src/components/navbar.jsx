@@ -1,5 +1,6 @@
 import React from 'react'
-import {NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Login from './login';
 
 function Navbar() {
   return (
@@ -12,11 +13,9 @@ function Navbar() {
         <li class="nav-item active">
         <NavLink className='nav-link' to='/'>Home</NavLink>
         </li>
+        
         <li class="nav-item">
-        <NavLink className='nav-link' to='/tabella'>Tabella</NavLink>
-        </li>
-        <li class="nav-item">
-        <NavLink className='nav-link' to='/report'>Report</NavLink>
+        <Login />
         </li>
       </ul>
     </div>

@@ -2,10 +2,14 @@ import { useState } from "react";
 import { Pie } from "@visx/shape";
 import { Group } from "@visx/group";
 import { Text } from "@visx/text";
+import DataChartPerformance from "./dataChart";
+import DataChartAccessibility from "./dataChartAcc";
+import DataChartBest from "./dataChartBest";
+import DataChartSeo from "./dataSeo";
+
 
 //REPLICHE INDICATORI IN SVG
-//NON TROVANDO UNA LIBRERIA CHE FACESSE DONUTS IDENTICI, è STATO RICREATO UN SIMILE
-//IL PROSSIMO STEP, GIA TESTATO è DI UTILIZZARE CHART.JS O SIMILARE PER RECUPERO DATI FETCH DINAMICI
+//IL PROSSIMO STEP, GIA TESTATO è DI UTILIZZARE CHART.JS O SIMILARE PER RECUPERO DATI FETCH DINAMICI AL SEARCH GENERICO
 
 const performance = [
   { symbol: "Performance", amount: 5, color: "#00ffbd", inVar: 37.6 },
@@ -39,6 +43,22 @@ export default function Dashboard() {
 
   return (
     <main>
+      <div className='container d-flex flex-row'>
+        <div className='p-2' style={{width:'30%', height:'30%'}}>
+        <DataChartPerformance /> 
+        </div>
+        <div className='p-2' style={{width:'30%', height:'30%'}}>
+        <DataChartAccessibility />
+        </div>
+        <div className='p-2' style={{width:'30%', height:'30%'}}>
+        <DataChartBest />
+        </div>
+        <div className='p-2' style={{width:'30%', height:'30%'}}>
+        <DataChartSeo />
+        </div>
+      </div>
+
+          
       <svg width={width} height={width}>
         <Group top={half} left={half}>
           <Pie

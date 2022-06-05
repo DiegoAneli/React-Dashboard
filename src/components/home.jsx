@@ -1,7 +1,7 @@
 import React from "react";
 import DataTable from "react-data-table-component";
-import Card from "@material-ui/core/Card";
 import linksData from "../linksData";
+import Dashboard from "./dashboard";
 
 require("es6-promise").polyfill();
 require("isomorphic-fetch");
@@ -55,38 +55,28 @@ export default function Home() {
     }*/
 
 
-    return (
-      
-        <Card>
-        <DataTable
-          title="Tabella Links"
-          columns={columns}
-          data={linksData}
-          defaultSortField="title"
-          pagination
-          //selectableRows
-          expandableRows
-          expandableRowsComponent={ExpandedComponent}
-          direction="auto"
-          expandOnRowClicked
-          expandableRowsHideExpander
-          fixedHeader
-          fixedHeaderScrollHeight="auto"
-          highlightOnHover
-          responsive
-          selectableRowsRadio="radio"
-          selectableRowsSingle
-          subHeaderAlign="right"
-          subHeaderWrap
-          subHeader
-          subHeaderComponent={
-            <input type="text" placeholder="Cerca Sito" className="form-control"
-            //value={search}
-            //onChange={() => setSearch(e.target.value)}
-            //filter={textFilter()}
-            />
-          }  
-        />
-      </Card>
+    return (  
+        <><DataTable
+        title="Tabella Links"
+        columns={columns}
+        data={linksData}
+        defaultSortField="title"
+        pagination
+        expandableRows
+        expandableRowsComponent={ExpandedComponent}
+        direction="auto"
+        expandOnRowClicked
+        expandableRowsHideExpander
+        fixedHeader
+        fixedHeaderScrollHeight="auto"
+        highlightOnHover
+        responsive
+        selectableRowsRadio="radio"
+        selectableRowsSingle
+        subHeaderAlign="right"
+        subHeaderWrap
+        subHeader
+        subHeaderComponent={<input type="text" placeholder="Cerca Sito" className="form-control" />} />
+        <Dashboard /></>
       );
 }
